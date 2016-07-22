@@ -1,0 +1,17 @@
+<div ng-controller="displayController as vm" class="cards" style="margin-top:70px">
+    <label style="margin: 30px auto;font-size:2em;color:white;"for=""><a ui-sref="home"style="color:white;">AVAILABLE WORKERS</a></label>
+    <div class="card" ng-repeat="person in vm.people track by $index">
+        <div class="list-group-item" style="text-align:center;max-width:400px;margin-bottom:30px">
+          <div>{{person.firstName}} {{person.lastName}}</div>
+          <div class="contact">
+              <span for="email">Email:  {{person.email}}</span>
+            </br>
+              <span for="phone">Phone Number:  {{person.phoneNumber}}</span>
+          </div>
+        </div>
+      <div>
+</div>
+
+</div>
+
+</div>

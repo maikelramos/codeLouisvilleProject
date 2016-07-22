@@ -1,0 +1,73 @@
+<div>
+  <div style="text-align:left">
+        <a class="btn btn-lg btn-active" ui-sref="home" >
+        <i class="fa fa fa-chevron-circle-left fa-2x pull-left"></i> GO BACK
+      </a>
+  </div>
+  <div ng-controller="registerController as vm" class="register">
+
+
+  <form name="myForm" novalidate >
+
+    <div class="alert alert-danger" ng-if="vm.hasError()">
+        <strong>Error!</strong> {{vm.errorMessage}}
+    </div>
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <div class="form-group">
+        <label class="control-label col-md-2" for="vm.person.firstName">First Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" type="text" name="name" ng-model="vm.person.firstName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2" for="vm.person.lastName">Last Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" type="text" name="vm.person.lastName" ng-model="vm.person.lastName" required>
+       </div>
+     </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="vm.person.business">Business</label>
+        <div class="col-md-10">
+          <select class="form-control" id="vm.person.business" ng-model="vm.person.business" required>
+            <option value="1" selected>Mechanic</option>
+            <option value="2">Carpenter</option>
+            <option value="3">Electrician</option>
+            <option value="4">Plumber</option>
+          </select>
+        </div>
+      </div>
+
+    </fieldset>
+
+
+    <fieldset >
+      <legend>Contact Information</legend>
+
+      <div class="form-group">
+        <label class="control-label col-md-2" for="vm.person.phoneNumber">Phone Number</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" type="text" name="vm.person.phoneNumber" ng-model="vm.person.phoneNumber" required>
+       </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2" for="vm.person.email">Email</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" type="email" name="vm.person.email" ng-model="vm.person.email" required>
+       </div>
+      </div>
+
+    </fieldset>
+
+      <div style="text-align:right">
+          <a class="btn btn-lg btn-active" ng-click="vm.add()"  ng-disabled="myForm.$invalid">
+          <i class="fa fa fa-send-o fa-2x pull-left"></i> SUBMIT
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
